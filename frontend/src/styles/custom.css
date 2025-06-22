@@ -1,0 +1,11 @@
+h1 {
+  color: #324159 !important; /* override Bootstrap if needed */
+}
+
+.my-custom-button {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
