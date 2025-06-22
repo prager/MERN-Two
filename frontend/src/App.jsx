@@ -1,9 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router";
+import HomePage from "./pages/HomePage";
+import CreateUser from "./pages/CreateUser";
+import UserDetails from "./pages/UserDetails";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import "./styles/custom.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
 
 const App = () => {
   return (
@@ -34,12 +35,11 @@ const App = () => {
           </ul>
         </div>
       </nav>
-
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/UserDetails/:id" element={<UserDetails />} />
+        <Route path="/NewUser" element={<CreateUser />} />
+        <Route path="/UserDetails" element={<UserDetails />} />
       </Routes>
-
       <div className="mt-5 p-4 bg-dark text-white text-center">
         <p>Footer</p>
       </div>
