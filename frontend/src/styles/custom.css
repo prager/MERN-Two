@@ -1,0 +1,127 @@
+/* Divider from https://bootstrapexamples.com/@aisha-bello/bootstrap-5-section-dividers */
+
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+}
+
+.intro-line {
+  line-height: 1.9;
+}
+
+.divider {
+  margin: 1rem 0;
+  position: relative;
+}
+
+/* Simple Line with Text */
+.divider-text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #6c757d;
+}
+
+.divider-text::before,
+.divider-text::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid #dee2e6;
+}
+
+.divider-text span {
+  padding: 0 1rem;
+}
+
+/* Gradient Divider */
+.divider-gradient {
+  height: 3px;
+  background: linear-gradient(to right, transparent, #0d6efd, transparent);
+}
+
+/* Wave Divider */
+.divider-wave {
+  height: 100px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230d6efd' fill-opacity='0.15' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")
+    center/cover no-repeat;
+}
+
+/* Icon Divider */
+.divider-icon {
+  text-align: center;
+  height: 20px;
+  position: relative;
+}
+
+.divider-icon::before,
+.divider-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 30px);
+  height: 1px;
+  background-color: #dee2e6;
+}
+
+.divider-icon::before {
+  left: 0;
+}
+
+.divider-icon::after {
+  right: 0;
+}
+
+/* Double Line */
+.divider-double {
+  height: 4px;
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Dashed */
+.divider-dashed {
+  border: none;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    #dee2e6 0,
+    #dee2e6 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+/* Angled Divider */
+.divider-angled {
+  height: 50px;
+  background: linear-gradient(
+      45deg,
+      transparent 49.5%,
+      #0d6efd 49.5%,
+      #0d6efd 50.5%,
+      transparent 50.5%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 49.5%,
+      #0d6efd 49.5%,
+      #0d6efd 50.5%,
+      transparent 50.5%
+    );
+  background-size: 30px 30px;
+  opacity: 0.1;
+}
+
+/* Fade Divider */
+.divider-fade {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #555a5f, transparent);
+}
+
+/* Content Sections */
+.content-section {
+  padding: 2rem;
+  background-color: #e8e8e8;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
