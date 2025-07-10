@@ -79,7 +79,7 @@ const HomePage = () => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col text-center">
             <img src={imgMap} alt="map" className="mt-4 img-fluid" />
           </div>
         </div>
