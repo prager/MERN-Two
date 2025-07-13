@@ -1,13 +1,36 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import bcrypt from "bcrypt";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // TODO: connect to backend
-    alert(`Login attempted with\nEmail: ${email}\nPassword: ${password}`);
+
+    const response = await fetch("http://localhost:5003/api/home/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      // Save token or user data as needed (e.g., localStorage)
+      localStorage.setItem("token", data.token);
+
+      // Redirect to UserDetails page
+      //navigate('/userdetails');
+      alert(`Login O with\nEmail: ${email}\nPassword: ${password}`);
+    } else {
+      alert(`Invalid credentials: ${email} Password: ${password}`);
+    }
+
+    //alert(`Login attempted with\nEmail: ${email}\nPassword: ${password}`);
   };
 
   return (

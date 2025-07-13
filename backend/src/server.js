@@ -5,11 +5,20 @@ import userRoutes from "./routes/userRoutes.js";
 import userTypeRoutes from "./routes/userTypeRoutes.js";
 import authRoutes from "./routes/auth.js";
 import protect from "./middleware/authMiddleware.js";
+import cors from "cors";
 
 dotenv.config();
 const PORT = process.env.PORT || 5003;
 
 const app = express();
+
+// Allow requests from your React app
+app.use(
+  cors({
+    origin: "http://localhost:5173", // allow only your frontend
+    credentials: true, // if using cookies/sessions
+  })
+);
 
 app.get("/api/profile", protect, (req, res) => {
   res.json({ user: req.user });

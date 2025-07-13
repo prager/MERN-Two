@@ -26,11 +26,11 @@ const HomePage = () => {
       <div className="container mt-5">
         <div className="row align-items-center">
           <div className="col-lg-4">
-            <div class="card shadow">
-              <div class="card-header card-title">
+            <div className="card shadow">
+              <div className="card-header card-title">
                 <h5>Lorem Ipsum</h5>
               </div>
-              <div class="card-body">
+              <div className="card-body">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
                 omnis, possimus at illo tempore mollitia ipsa sunt harum ducimus
                 velit asperiores, neque vero dicta cumque, incidunt quaerat
@@ -39,11 +39,11 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-lg-4">
-            <div class="card shadow">
-              <div class="card-header card-title">
+            <div className="card shadow">
+              <div className="card-header card-title">
                 <h5>Lorem Ipsum</h5>
               </div>
-              <div class="card-body">
+              <div className="card-body">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
                 omnis, possimus at illo tempore mollitia ipsa sunt harum ducimus
                 velit asperiores, neque vero dicta cumque, incidunt quaerat
@@ -52,11 +52,11 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-lg-4">
-            <div class="card shadow">
-              <div class="card-header card-title">
+            <div className="card shadow">
+              <div className="card-header card-title">
                 <h5>Lorem Ipsum</h5>
               </div>
-              <div class="card-body">
+              <div className="card-body">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
                 omnis, possimus at illo tempore mollitia ipsa sunt harum ducimus
                 velit asperiores, neque vero dicta cumque, incidunt quaerat
