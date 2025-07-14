@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import bcrypt from "bcrypt";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -25,7 +24,8 @@ function Login() {
 
       // Redirect to UserDetails page
       //navigate('/userdetails');
-      alert(`Login O with\nEmail: ${email}\nPassword: ${password}`);
+      //alert(`Login OK with\nEmail: ${email}\nPassword: ${password}`);
+      navigate("/userpage", { state: { user: data.user } });
     } else {
       alert(`Invalid credentials: ${email} Password: ${password}`);
     }

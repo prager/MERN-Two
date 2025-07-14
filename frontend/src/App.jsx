@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router";
 import HomePage from "./pages/HomePage";
 import CreateUser from "./pages/CreateUser";
 import UserDetails from "./pages/UserDetails";
+import UserPage from "./pages/UserPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./styles/custom.css";
@@ -46,6 +47,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/NewUser" element={<CreateUser />} />
         <Route path="/UserDetails" element={<UserDetails />} />
+        <Route path="/userpage" element={<UserPage />} />
       </Routes>
       <footer>
         <div>

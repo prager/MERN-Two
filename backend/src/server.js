@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import userTypeRoutes from "./routes/userTypeRoutes.js";
+import projectRoutes from "./routes/projectRoutes.js";
 import authRoutes from "./routes/auth.js";
 import protect from "./middleware/authMiddleware.js";
 import cors from "cors";
@@ -29,6 +30,7 @@ app.use(express.json());
 
 app.use("/api/home", userRoutes);
 app.use("/api/home", userTypeRoutes);
+app.use("/api/home", projectRoutes);
 app.use("/api/home", authRoutes);
 
 app.listen(PORT, () => {
