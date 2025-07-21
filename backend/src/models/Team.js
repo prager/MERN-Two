@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 // 1 - create a schema
-const projectSchema = new mongoose.Schema(
+const teamSchema = new mongoose.Schema(
   {
-    projname: {
+    teamname: {
       type: String,
       required: true,
     },
@@ -16,6 +16,6 @@ const projectSchema = new mongoose.Schema(
 );
 
 // 2 - create a model based off of that schema
-const Project = mongoose.model("project", projectSchema);
+const Team = mongoose.model("team", teamSchema);
 
-export default Project;
+export default Team;

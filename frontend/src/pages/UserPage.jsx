@@ -6,15 +6,15 @@ function UserPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const user = location.state?.user;
-  const [projname, setProjName] = useState("");
+  const [teamname, setTeamName] = useState("");
   const [description, setDescription] = useState("");
 
   const handleSubmit = async (e) => {
     //e.preventDefault();
-    const response = await fetch("http://localhost:5003/api/home/newproject", {
+    const response = await fetch("http://localhost:5003/api/home/newteam", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ projname, description }),
+      body: JSON.stringify({ teamname, description }),
     });
 
     const data = await response.json();
@@ -51,7 +51,7 @@ function UserPage() {
     return (
       <>
         <div className="row justify-content-center mt-5 mb-3">
-          <div className="col offset-lg-2">
+          <div className="col offset-lg-4">
             <h2>User Details</h2>
             <p>Name: {user.username || "N/A"}</p>
             <p>Email: {user.email}</p>
@@ -60,28 +60,28 @@ function UserPage() {
         </div>
         <div className="row justify-content-center mt-5 mb-3">
           <div className="col-md-4">
-            <h3 className="mb-3">Create Project</h3>
+            <h3 className="mb-3">Create Team</h3>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
-                <label htmlFor="projName" className="form-label">
-                  Project Name
+                <label htmlFor="teamName" className="form-label">
+                  Team Name
                 </label>
                 <input
                   type="text"
                   className="form-control"
-                  id="projName"
-                  value={projname}
-                  onChange={(e) => setProjName(e.target.value)}
+                  id="teamName"
+                  value={teamname}
+                  onChange={(e) => setTeamName(e.target.value)}
                   required
                 />
               </div>
               <div className="mb-3">
                 <label htmlFor="projDesc" className="form-label">
-                  Project Description
+                  Team Description
                 </label>
                 <textarea
                   className="form-control"
-                  id="projDesc"
+                  id="teamDesc"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   rows="5"
@@ -89,7 +89,7 @@ function UserPage() {
                 ></textarea>
               </div>
               <button type="submit" className="btn btn-secondary w-150">
-                Create New Project
+                Create New Team
               </button>
             </form>
           </div>
@@ -98,5 +98,4 @@ function UserPage() {
     );
   }
 }
-
 export default UserPage;
