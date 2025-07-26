@@ -11,7 +11,7 @@ function UserPage() {
 
   const handleSubmit = async (e) => {
     //e.preventDefault();
-    const response = await fetch("http://localhost:5003/api/home/newteam", {
+    const response = await fetch("/api/home/newteam", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ teamname, description }),

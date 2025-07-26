@@ -8,9 +8,9 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: connect to backend
+    // TODO: connect to backend - done
 
-    const response = await fetch("http://localhost:5003/api/home/login", {
+    const response = await fetch("/api/home/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -44,6 +44,7 @@ function Login() {
             </label>
             <input
               type="email"
+              placeholder="Enter your email"
               className="form-control"
               id="loginEmail"
               value={email}

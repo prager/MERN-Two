@@ -14,10 +14,16 @@ const PORT = process.env.PORT || 5003;
 const app = express();
 
 // Allow requests from your React app
+const allowedOrigins = ["http://localhost:5173", "https://web2.leho-62.info"];
 app.use(
   cors({
-    origin: "http://localhost:5173", // allow only your frontend
-    credentials: true, // if using cookies/sessions
+    origin: (origin, callback) => {
+      // allow requests with no origin (like mobile apps or curl)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
   })
 );
 

@@ -34,7 +34,7 @@ const App = () => {
               </li>
               <li className="nav-item">
                 <a className="nav-link disabled" href="#">
-                  Disabled
+                  Disabled - 1
                 </a>
               </li>
             </ul>
