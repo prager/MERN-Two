@@ -52,7 +52,7 @@ function UserPage() {
       <>
         <div className="row justify-content-center mt-5 mb-3">
           <div className="col offset-lg-4">
-            <h2>User Details</h2>
+            <h2>Corporate User Details</h2>
             <p>Name: {user.username || "N/A"}</p>
             <p>Email: {user.email}</p>
             {/* More fields as needed */}

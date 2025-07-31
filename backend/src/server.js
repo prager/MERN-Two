@@ -4,7 +4,10 @@ import { connectDB } from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import userTypeRoutes from "./routes/userTypeRoutes.js";
 import teamRoutes from "./routes/teamRoutes.js";
+import teamMemberRoutes from "./routes/teamMemberRoutes.js";
 import authRoutes from "./routes/auth.js";
+import taskRoutes from "./routes/taskRoutes.js";
+import positionRoutes from "./routes/positionRoutes.js";
 import protect from "./middleware/authMiddleware.js";
 import cors from "cors";
 
@@ -38,6 +41,9 @@ app.use("/api/home", userRoutes);
 app.use("/api/home", userTypeRoutes);
 app.use("/api/home", teamRoutes);
 app.use("/api/home", authRoutes);
+app.use("/api/home", teamMemberRoutes);
+app.use("/api/home", positionRoutes);
+app.use("/api/home", taskRoutes);
 
 app.listen(PORT, () => {
   console.log("Server started on PORT: ", PORT);
