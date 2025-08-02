@@ -12,3 +12,25 @@ export async function createTeam(req, res) {
     res.status(500).json({ message: "Internal server error" });
   }
 }
+
+export async function getAllTeams(req, res) {
+  try {
+    const teams = await Team.find();
+    //res.status(200).send("all good!");
+    res.status(200).json(teams);
+  } catch (error) {
+    console.error("Error in getAllTeams controller", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+}
+
+export async function getTeam(req, res) {
+  try {
+    const team = await Team.findById(req.params.id);
+    if (!team) return res.status(404).json({ message: "Team not found!" });
+    res.status(200).json(user);
+  } catch (error) {
+    console.error("Error in getTeam controller", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+}
