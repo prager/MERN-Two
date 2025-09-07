@@ -4,43 +4,14 @@ import HomePage from "./pages/HomePage";
 import CreateUser from "./pages/CreateUser";
 import UserDetails from "./pages/UserDetails";
 import UserPage from "./pages/UserPage";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
-import "./styles/custom.css";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import { Navbar } from "./components/Navbar";
 
 const App = () => {
   return (
     <div>
-      <div className="container mt-3">
-        <nav className="navbar navbar-expand-sm bg-dark navbar-dark rounded">
-          <div className="container-fluid">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" href="/">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" href="/login">
-                  Login
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" href="#">
-                  Disabled - 1
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />

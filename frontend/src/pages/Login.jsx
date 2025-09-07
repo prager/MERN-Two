@@ -8,7 +8,6 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: connect to backend - done
 
     const response = await fetch("/api/home/login", {
       method: "POST",
